@@ -1,1 +1,11 @@
-<p>books works!</p>
+<section >
+  @defer {
+    @for (book of booksList; track book.id) {
+      <app-book-item [book]="book"/>
+    }
+  } @loading {
+    <p>Loading books...</p>
+  } @placeholder {
+    <p>:|</p>
+  }
+</section>
