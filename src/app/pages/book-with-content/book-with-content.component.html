@@ -1,0 +1,17 @@
+<div>
+  @if (book != null && book != undefined) {
+    <div>
+      <h2>{{ book.name }}</h2>
+      <a [routerLink]="['/author', book.author_id]">Author</a>
+      <h6>{{ book.description }}</h6>
+      @if (text != null && text != undefined) {
+        <div>{{ text.value }}</div>
+      } @else {
+        <p>Text not found</p>
+      }
+    </div>
+  } @else {
+    <p>Book not found</p>
+  }
+  <a [routerLink]="['/']">To main page</a>
+</div>
