@@ -1,0 +1,83 @@
+{
+  "books": [
+    {
+      "id": 0,
+      "name": "The Silent Forest",
+      "author_id": 0,
+      "text_id": 0,
+      "description": "A mysterious forest that has been silent for centuries holds a dark secret. As a group of explorers venture deeper into its heart, they begin to unravel its ancient mysteries."
+    },
+    {
+      "id": 1,
+      "name": "Whispers of the Past",
+      "author_id": 0,
+      "text_id": 1,
+      "description": "In a small town where history and legend intertwine, an archaeologist discovers artifacts that hold the key to unlocking forgotten truths about humanity's past."
+    },
+    {
+      "id": 2,
+      "name": "The Forgotten Kingdom",
+      "author_id": 1,
+      "text_id": 2,
+      "description": "A once-powerful kingdom now lies in ruins. A young historian embarks on a journey to piece together the lost fragments of its history and uncover the fate of its last rulers."
+    },
+    {
+      "id": 3,
+      "name": "Shadows of the Ancients",
+      "author_id": 2,
+      "text_id": 3,
+      "description": "A gripping tale of an ancient civilization that vanished without a trace. Dark forces begin to stir as a group of scholars accidentally awaken something long dormant."
+    },
+    {
+      "id": 4,
+      "name": "Beneath the Crimson Sky",
+      "author_id": 3,
+      "text_id": 4,
+      "description": "Set against the backdrop of a war-torn world, this novel tells the story of forgotten heroes who fought under the crimson sky, and the legacy they left behind."
+    }
+  ],
+  "authors": [
+    {
+      "id": 0,
+      "name": "Emily Carter",
+      "monument_count": 3
+    },
+    {
+      "id": 1,
+      "name": "Robert Dawson",
+      "monument_count": 5
+    },
+    {
+      "id": 2,
+      "name": "Sophia Blackwood",
+      "monument_count": 2
+    },
+    {
+      "id": 3,
+      "name": "Michael Harris",
+      "monument_count": 4
+    }
+  ],
+  "texts": [
+    {
+      "id": 0,
+      "value": "In the depths of the forest, there was a silence that stretched on for centuries, disturbed only by the whispers of the wind........"
+    },
+    {
+      "id": 1,
+      "value": "The past holds many secrets, some too dark to reveal, and others waiting to be discovered in the most unexpected places........."
+    },
+    {
+      "id": 2,
+      "value": "Once a prosperous kingdom, it now lies forgotten, its ruins covered in ivy and memories lost to time........."
+    },
+    {
+      "id": 3,
+      "value": "Ancient shadows creep from the forgotten halls, their presence a reminder of a power long buried........."
+    },
+    {
+      "id": 4,
+      "value": "Beneath the crimson sky, battles were fought and legends born, but history has a way of erasing even the greatest of heroes........."
+    }
+  ]
+}
