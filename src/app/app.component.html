@@ -5,6 +5,15 @@
     </a>
   </header>
   <section class="content">
-    <router-outlet/>
+    @defer {
+      <router-outlet/>
+    } @loading {
+      <p>Loading...</p>
+    } @placeholder {
+      <p>Zzzzzz...</p>
+    } @error {
+      <p>Loading error</p>
+    }
+
   </section>
 </main>
