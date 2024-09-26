@@ -1,17 +1,17 @@
-<div>
+<div class="book-container">
   @if (book != null && book != undefined) {
-    <div>
-      <h2>{{ book.name }}</h2>
-      <a [routerLink]="['/author', book.author_id]">Author</a>
-      <h6>{{ book.description }}</h6>
+    <div class="book-info">
+      <h2 class="book-title">{{ book.name }}</h2>
+      <a [routerLink]="['/author', book.author_id]" class="book-link author-link">Author</a>
+      <h6 class="book-description">{{ book.description }}</h6>
       @if (text != null && text != undefined) {
-        <div>{{ text.value }}</div>
+        <div class="book-text">{{ text.value }}</div>
       } @else {
-        <p>Text not found</p>
+        <p class="text-not-found">Text not found</p>
       }
     </div>
   } @else {
-    <p>Book not found</p>
+    <p class="book-not-found">Book not found</p>
   }
-  <a [routerLink]="['/']">To main page</a>
+  <a [routerLink]="['/']" class="back-link">To main page</a>
 </div>

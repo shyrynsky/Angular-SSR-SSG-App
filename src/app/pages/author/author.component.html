@@ -1,8 +1,8 @@
-<div>
+<div class="author-container">
   @if (author != null && author != undefined) {
-    <div>
-      <h2>{{ author.name }}</h2>
-      <p>
+    <div class="author-info">
+      <h2 class="author-name">{{ author.name }}</h2>
+      <p class="author-monument">
         @switch (author.monument_count) {
           @case (1) {
             There is {{ author.monument_count }} monument to this author
@@ -17,7 +17,7 @@
       </p>
     </div>
   } @else {
-    <p>Author not found</p>
+    <p class="author-not-found">Author not found</p>
   }
-  <a [routerLink]="['/']">To main page</a>
+  <a [routerLink]="['/']" class="back-link">To main page</a>
 </div>

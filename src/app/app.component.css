@@ -1,0 +1,38 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  padding: 0;
+}
+
+.brand-name {
+  background-color: #4CAF50;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-text {
+  color: white;
+  font-size: 24px;
+}
+
+.logo-link:hover .logo-text {
+  text-decoration: underline;
+}
+
+.content {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
