@@ -1,16 +1,20 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Author } from '../../Models/author';
+import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthorsService {
 
-  url = 'http://localhost:3000/authors';
+  url = `${environment.apiUrl}/authors`;
 
-  async getAuthorById(id: number): Promise<Author | undefined> {
-    const data = await fetch(`${this.url}/${id}`);
-    return (await data.json()) ?? {};
+  http = inject(HttpClient);
+
+  getAuthorById(id: number): Observable<Author | undefined> {
+    return this.http.get<Author | undefined>(`${this.url}/${id}`);
   }
 
 }

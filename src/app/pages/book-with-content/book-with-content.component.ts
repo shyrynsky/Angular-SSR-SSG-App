@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TextsService } from './../../shared/services/texts.service';
 import { Text } from '../../Models/text';
@@ -13,23 +13,27 @@ import { Book } from '../../Models/book';
   templateUrl: './book-with-content.component.html',
   styleUrl: './book-with-content.component.css'
 })
-export class BookWithContentComponent {
+export class BookWithContentComponent implements OnInit {
   textsService = inject(TextsService)
-  bookService = inject(BooksService)
+  booksService = inject(BooksService)
   text?: Text;
   book?: Book;
   route = inject(ActivatedRoute);
 
   constructor() {
+
+  }
+
+  ngOnInit() {
     const bookId = parseInt(this.route.snapshot.params['id'], 10);
 
-    this.bookService.getBookById(bookId).then((book) =>{
+    this.booksService.getBookById(bookId).subscribe((book?: Book) =>{
       this.book = book;
       if (this.book != null && this.book != undefined) {
-          this.textsService.getTextById(this.book.text_id).then((text) =>{
-            this.text = text;
-          });
-        }
+        this.textsService.getTextById(this.book.text_id).subscribe((text?: Text) =>{
+          this.text = text;
+        });
+      }
     });
   }
 }

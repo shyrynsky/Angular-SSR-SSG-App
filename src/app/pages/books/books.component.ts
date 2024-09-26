@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { BooksService } from '../../shared/services/books.service';
 import { Book } from '../../Models/book';
 import { BookItemComponent } from "../../shared/components/book-item/book-item.component";
@@ -10,13 +10,18 @@ import { BookItemComponent } from "../../shared/components/book-item/book-item.c
   templateUrl: './books.component.html',
   styleUrl: './books.component.css'
 })
-export class BooksComponent {
+export class BooksComponent implements OnInit {
   booksService = inject(BooksService)
   booksList: Book[] = [];
 
   constructor() {
-    this.booksService.getAllBooks().then((bookList: Book[]) =>{
-      this.booksList = bookList;
-    });
+
+  }
+
+  ngOnInit() {
+    this.booksService.getAllBooks().subscribe((books: Book[]) =>{
+      this.booksList = books;
+      }
+    );
   }
 }

@@ -1,16 +1,19 @@
+import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 import { Text } from './../../Models/text';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TextsService {
 
-  url = 'http://localhost:3000/texts';
+  url = `${environment.apiUrl}/texts`;
 
-  async getTextById(id: number): Promise<Text | undefined> {
-    const data = await fetch(`${this.url}/${id}`);
-    return (await data.json()) ?? {};
+  http = inject(HttpClient);
+
+  getTextById(id: number): Observable<Text | undefined> {
+    return this.http.get<Text | undefined>(`${this.url}/${id}`);
   }
-
 }

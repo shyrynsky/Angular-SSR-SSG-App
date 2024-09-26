@@ -1,22 +1,23 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Book } from '../../Models/book';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
 
-  url = 'http://localhost:3000/books';
+  url = `${environment.apiUrl}/books`;
 
+  http = inject(HttpClient);
 
-
-  async getAllBooks(): Promise<Book[]> {
-    const data = await fetch(this.url);
-    return (await data.json() as Book[]) ?? [];
+  getAllBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>(this.url);
   }
-  async getBookById(id: number): Promise<Book | undefined> {
-    const data = await fetch(`${this.url}/${id}`);
-    return (await data.json()) ?? {};
+  getBookById(id: number): Observable<Book | undefined> {
+    return this.http.get<Book | undefined>(`${this.url}/${id}`);
   }
 
 }
